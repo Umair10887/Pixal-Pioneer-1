@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin | Pixal Pioneers</title><link rel="stylesheet" href="style.css"><style>
+.admin-page{min-height:100vh;display:grid;place-items:center;padding:35px 18px;background:#17191d}.admin-card{width:min(100%,500px);background:#fff;padding:32px;border-radius:8px}.admin-card h1{font-size:28px;margin:10px 0}.admin-card p{font-size:12px;color:#777;line-height:1.7}.admin-card label{display:block;font-size:11px;font-weight:700;margin:15px 0 6px}.admin-card input,.admin-card textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:4px;font:inherit}.admin-card button{margin-top:15px;border:0;background:#f66a1e;color:#fff;font-weight:700;padding:12px 16px;border-radius:4px;cursor:pointer}.admin-card button.secondary{background:#222}.admin-brand{font-weight:700;letter-spacing:1px}.admin-brand b{color:#f66a1e}.status{margin-top:15px!important;padding:10px;background:#f6f6f6}.hidden{display:none}.dashboard{width:min(100%,720px);background:#fff;padding:30px;border-radius:8px}.dashboard h2{margin-top:24px}.dashboard .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dashboard .danger{background:#333}@media(max-width:560px){.dashboard .row{grid-template-columns:1fr}}
+</style></head><body>
+<main class="admin-page"><section class="admin-card" id="loginPanel">
+<div class="admin-brand">PIXAL <b>PIONEERS</b> / ADMIN</div><h1>Admin sign in</h1><p>Private area. Only accounts explicitly listed in Firestore <code>admins</code> are authorised to edit public content.</p>
+<label for="email">Admin email</label><input id="email" type="email" autocomplete="username" placeholder="you@yourdomain.com">
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Firebase Auth password">
+<button id="loginBtn">Sign in securely</button><p id="loginStatus" class="status">Configure Firebase before using the admin panel.</p>
+</section>
+<section class="dashboard hidden" id="dashboard">
+<div class="admin-brand">PIXAL <b>PIONEERS</b> / ADMIN</div><h1>Website content</h1><p>Edits save to Firestore document <code>siteContent/public</code>. Public page currently reads founder name and contact email. Other fields are saved for future wiring.</p>
+<label for="founderName">Founder name</label><input id="founderName" value="Muhammad Umair Ali">
+<label for="contactEmail">Public contact email</label><input id="contactEmail" type="email" placeholder="official email">
+<label for="announcement">Announcement / note</label><textarea id="announcement" rows="3" placeholder="Optional website announcement"></textarea>
+<button id="saveBtn">Save content</button><button class="secondary" id="logoutBtn">Sign out</button><p id="saveStatus" class="status"></p>
+</section></main>
+<script type="module" src="admin.js"></script></body></html>
